@@ -1,1 +1,1 @@
-var app = angular.module('reddit-clone', []);
+var app = angular.module('redditClone', []);

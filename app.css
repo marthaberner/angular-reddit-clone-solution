@@ -1,0 +1,33 @@
+body {
+  margin: 2em;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  float: left;
+  border-radius: 5px;
+  margin-right: 1em;
+}
+
+.glyphicon-arrow-up {
+  margin-left: 1em;
+}
+
+.well {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main {
+  margin-top: 2em;
+}
+
+.post {
+  overflow: hidden;
+}
+
+.post .author {
+  float: right;
+}

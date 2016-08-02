@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html ng-app='reddit-clone'>
+<html ng-app='redditClone'>
   <head>
     <meta charset="utf-8">
     <title>G29 Reddit Clone Solution</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css" media="screen" title="no title" charset="utf-8">
   </head>
-  <body>
+  <body ng-controller='PostsController'>
     <div>
       <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="#">Reddit Clone</a></li>
@@ -27,8 +28,27 @@
         </li>
       </ul>
     </div>
+    <div class="main">
+      <div class="well post" ng-repeat='post in posts'>
+        <p>
+          <img ng-src='{{post.img_url}}' />
+        </p>
+        <h5 class='author'>
+          {{post.author}}
+        </h5>
+        <h3>
+          {{post.title}}<span class='glyphicon glyphicon-arrow-up'></span>
+          <span class='glyphicon glyphicon-arrow-down'></span>
+          {{post.votes}}
+        </h3>
+        <p>
+          {{post.description}}
+        </p>
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
     <script type="text/javascript" src='js/app.js'></script>
     <script type="text/javascript" src='js/controllers/posts_controller.js'></script>
+    <script type="text/javascript" src='js/services/posts_factory.js'></script>
   </body>
 </html>
