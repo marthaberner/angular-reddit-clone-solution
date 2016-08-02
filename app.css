@@ -10,8 +10,16 @@ img {
   margin-right: 1em;
 }
 
+.comments {
+  margin-top: 4em;
+}
+
 .glyphicon-arrow-up {
   margin-left: 1em;
+}
+
+.glyphicon-comment {
+  margin-right: .5em;
 }
 
 .green {
@@ -22,7 +30,7 @@ img {
   color: red;
 }
 
-.well {
+.well.post{
   width: 80%;
   margin-right: auto;
   margin-left: auto;

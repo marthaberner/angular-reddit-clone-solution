@@ -3,6 +3,11 @@ app.controller('PostsController', ['$scope', 'PostsFactory', function ($scope, P
   $scope.upvote = function (post) {
     post.votes += 1
   }
+
+  $scope.showme = false;
+  $scope.toggleForm = function () {
+    this.showme = !this.showme;
+  }
   $scope.downvote = function (post) {
     post.votes -= 1
   }

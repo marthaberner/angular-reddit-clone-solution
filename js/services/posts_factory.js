@@ -16,7 +16,12 @@ app.factory('PostsFactory', function () {
       description: "I do things because they feel good. I drink because it feels good. I killed my husband because it felt good to be rid of him.",
       date: new Date('July 20, 2016 03:24:00'),
       votes: -5,
-      comments: []
+      comments: [
+        {
+          commenter: 'Tywin Lannister',
+          body: "Before long I'll be dead"
+        }
+      ]
     },
     {
       title: "I don't need saving.",

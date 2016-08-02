@@ -44,7 +44,20 @@
         <p>
           {{post.description}}
         </p>
-        <time><span class='glyphicon glyphicon-calendar'></span>{{ post.date | amCalendar }}</time> 
+        <time><span class='glyphicon glyphicon-calendar'></span>{{ post.date | amCalendar }}</time> |
+        <span ng-click='toggleForm()'>
+          <span class='glyphicon glyphicon-comment'></span><ng-pluralize count="post.comments.length"
+        when="{ '1': '{{post.comments.length}} comment', 'other': '{{post.comments.length}} comments'}"></ng-pluralize>
+        </span>
+        <div class='comments' ng-show='showme' ng-repeat='comment in post.comments'>
+          <h3>Comments</h3>
+          <div class="well well-sm">
+            <h5>
+              {{comment.commenter}} : <small>{{comment.body}}</small>
+            </h5>
+          </div>
+        </div>
+
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
