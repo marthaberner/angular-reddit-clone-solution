@@ -3,10 +3,24 @@ app.controller('PostsController', ['$scope', 'PostsFactory', function ($scope, P
   $scope.upvote = function (post) {
     post.votes += 1
   }
+  $scope.comment = {};
 
-  $scope.showme = false;
-  $scope.toggleForm = function () {
-    this.showme = !this.showme;
+  $scope.submitComment = function () {
+    this.post.comments.push($scope.comment);
+    this.showCommentForm = false;
+    this.showComments = true;
+    $scope.comment = {};
+  }
+
+  $scope.showComments = false;
+  $scope.showCommentForm = false;
+
+  $scope.toggleComments = function () {
+    this.showComments = !this.showComments;
+  }
+
+  $scope.toggleCommentForm = function () {
+    this.showCommentForm = !this.showCommentForm;
   }
   $scope.downvote = function (post) {
     post.votes -= 1

@@ -45,11 +45,26 @@
           {{post.description}}
         </p>
         <time><span class='glyphicon glyphicon-calendar'></span>{{ post.date | amCalendar }}</time> |
-        <span ng-click='toggleForm()'>
+        <span ng-click='toggleComments()'>
           <span class='glyphicon glyphicon-comment'></span><ng-pluralize count="post.comments.length"
         when="{ '1': '{{post.comments.length}} comment', 'other': '{{post.comments.length}} comments'}"></ng-pluralize>
-        </span>
-        <div class='comments' ng-show='showme' ng-repeat='comment in post.comments'>
+        </span> |
+        <span ng-click='toggleCommentForm()'><span class='glyphicon glyphicon-pencil'></span>Add Comment</span>
+
+          <!-- NEW COMMENT FORM -->
+        <div class="comments well well-sm" ng-show='showCommentForm'>
+          <h3>New Comment</h3>
+          <form class="form-group">
+            <label for="body">Comment Body</label>
+            <input class='form-control' type="text" ng-model='comment.body' id='body'>
+            <label for="commenter">Commenter</label>
+            <input class='form-control' type="text" ng-model='comment.commenter' id='commenter'>
+            <button ng-click="submitComment()" class="btn btn-default" type="button" name="name">Submit</button>
+          </form>
+        </div>
+
+        <!-- COMMENTS WELL -->
+        <div class='comments' ng-show='showComments' ng-repeat='comment in post.comments'>
           <h3>Comments</h3>
           <div class="well well-sm">
             <h5>
@@ -57,9 +72,9 @@
             </h5>
           </div>
         </div>
-
       </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
