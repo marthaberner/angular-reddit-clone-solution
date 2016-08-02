@@ -37,9 +37,9 @@
           {{post.author}}
         </h5>
         <h3>
-          {{post.title}}<span class='glyphicon glyphicon-arrow-up'></span>
-          <span class='glyphicon glyphicon-arrow-down'></span>
-          {{post.votes}}
+          {{post.title}}<span ng-click='upvote(post)' class='glyphicon glyphicon-arrow-up'></span>
+          <span ng-click='downvote(post)' class='glyphicon glyphicon-arrow-down'></span>
+          <span ng-class="getClass(post)">{{post.votes}}</span>
         </h3>
         <p>
           {{post.description}}
