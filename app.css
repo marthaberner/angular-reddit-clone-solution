@@ -10,16 +10,14 @@ img {
   margin-right: 1em;
 }
 
+/*This is for our hiding (this is not a class from ng-animate)*/
+.ng-hide {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
 [ng-click] {
   cursor: pointer;
-}
-
-.ng-enter {
-  animation: fadeInRight .5s;
-}
-
-.ng-leave {
-  animation: fadeOutRight .5s;
 }
 
 .comments {

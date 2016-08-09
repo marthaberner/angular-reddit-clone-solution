@@ -1,1 +1,1 @@
-var app = angular.module('redditClone', ['angularMoment']);
+var app = angular.module('redditClone', ['angularMoment', 'ngAnimate']);
