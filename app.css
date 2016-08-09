@@ -10,6 +10,18 @@ img {
   margin-right: 1em;
 }
 
+[ng-click] {
+  cursor: pointer;
+}
+
+.ng-enter {
+  animation: fadeInRight .5s;
+}
+
+.ng-leave {
+  animation: fadeOutRight .5s;
+}
+
 .comments {
   margin-top: 4em;
 }
