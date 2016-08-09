@@ -21,16 +21,17 @@
         </li>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-            Dropdown <span class="caret"></span>
+            Sort by {{sortBy}}<span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            ...
+            <li><a href="#" ng-click='sortBy = "date"'>date</a></li>
+            <li><a href="#" ng-click='sortBy = "votes"'>votes</a></li>
           </ul>
         </li>
       </ul>
     </div>
     <div class="main">
-      <div class="well post" ng-repeat='post in posts | filter:search'>
+      <div class="well post" ng-repeat='post in posts | filter:search | orderBy:sortBy: reverse=true'>
         <p>
           <img ng-src='{{post.img_url}}' />
         </p>
@@ -75,7 +76,8 @@
         </div>
       </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>

@@ -3,6 +3,8 @@ app.controller('PostsController', ['$scope', 'PostsFactory', function ($scope, P
   $scope.upvote = function (post) {
     post.votes += 1
   }
+
+  $scope.sortBy = '';
   $scope.comment = {};
 
   $scope.submitComment = function () {
