@@ -11,7 +11,8 @@
     <div>
       <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="#">Reddit Clone</a></li>
-        <li role="presentation"><a href="#"><span class="glyphicon glyphicon-plus"></span> New Post</a></li>
+        <li role="presentation" ng-click="togglePostForm()"><a href="#">
+          <span class="glyphicon glyphicon-plus"></span>New Post</a></li>
         <li>
           <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -31,6 +32,41 @@
       </ul>
     </div>
     <div class="main">
+      <!-- NEW POST FORM -->
+      <div class="well" ng-show='showPostForm'>
+        <form class="form-horizontal" ng-submit='submitPost()'>
+          <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">Title</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model='post.title' class="form-control" id="title" placeholder="Post Title">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="author" class="col-sm-2 control-label">Author</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model='post.author' class="form-control" id="author" placeholder="Post Author">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="img_url" class="col-sm-2 control-label">ImageUrl</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model='post.img_url' class="form-control" id="img_url" placeholder="image url">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description" class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model='post.description' class="form-control" id="description" placeholder="Description">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Submit Post</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- END POST FORM -->
       <div class="well post" ng-repeat='post in posts | filter:search | orderBy:sortBy: reverse=true'>
         <p>
           <img ng-src='{{post.img_url}}' />

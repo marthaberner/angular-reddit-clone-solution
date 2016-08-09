@@ -4,6 +4,24 @@ app.controller('PostsController', ['$scope', 'PostsFactory', function ($scope, P
     post.votes += 1
   }
 
+  $scope.showingPostForm = false;
+
+  $scope.submitPost = function () {
+    if($scope.post){
+      $scope.post.comments = [];
+      $scope.post.votes = 0;
+      $scope.post.date = new Date();
+      $scope.posts.push($scope.post)
+      $scope.post = {};
+      $scope.togglePostForm();
+    }
+
+  }
+
+  $scope.togglePostForm = function () {
+    $scope.showPostForm = !$scope.showPostForm;
+  }
+
   $scope.sortBy = '';
   $scope.comment = {};
 
